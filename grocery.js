@@ -24,6 +24,6 @@ $(document).ready(function() {
 
 //3. Display the total cost of the groceries. Make sure this updates as you add items to the list.
 
-//4. Put a check in to make sure users aren't adding items without a name, price, or quatity.
+//4. Put a check in to make sure users aren't adding items without a name, price, or quantity.
 
 });
