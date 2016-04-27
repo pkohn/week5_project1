@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // 5. Add the CDN for jQuery UI script to grocery.html
-// You can find the snippet here: https://developers.google.com/speed/libraries/
+// You can find the snippet here: https://developers.google.com/speed/libraries/#jquery-ui
 
 // 6. Add a remove button at the bottom below the total. When clicked, it should remove
 // the last item and update the total.
