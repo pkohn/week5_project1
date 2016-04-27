@@ -54,25 +54,9 @@ function addItem(name, price, quantity){
 };
 
 function updateList(item){
-  if(item === ""){
-    $("#list li:first-child").remove();
-  }
-  else{
-    $("<li>" + item.name + " (" + item.quantity + ") @ " + item.price + "</li>")
-    .insertBefore('#list li:first-child')
-  }
+  $("<li>" + item.name + " (" + item.quantity + ") @ " + item.price + "</li>")
+  .insertBefore('#list li:first-child')
 }
-
-$(".btn-warning").click(function(){
-    removeItem();
-});
-
-function removeItem(){
-  groceries.shift();
-  updateList("");
-  displayTotal();
-};
-
 
 //3. Make sure that the grocery list displayed updates when you add an item to the list.
 
