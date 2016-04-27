@@ -74,7 +74,6 @@ function removeItem(){
 };
 
 
-$("ul#list").sortable();
 //3. Make sure that the grocery list displayed updates when you add an item to the list.
 
 //3. Display the total cost of the groceries. Make sure this updates as you add items to the list.
