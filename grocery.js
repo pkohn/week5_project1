@@ -32,22 +32,47 @@ $(".btn-success").click(function(){
     var newItemName = $("#addItem").val();
     var newItemPrice = $("#addPrice").val();
     var newItemQuant = $("#addQuantity").val();
+    var newItemStatus = "needed";
+
+    
+    // check values entered
+    while (newItemName === ""){
+
+      newItemName = prompt("Please enter a valid item name!");
+    
+    }
+
+    while ((newItemPrice > 0) === false){
+
+      newItemPrice = prompt("Please enter a valid price");
+    
+    }
+
+    while ((newItemQuant > 0) === false){
+
+      newItemQuant = prompt("Please enter a valid quantity");
+    
+    }
   
   $("ul").append(
       $("<li>").append(
-       newItemName + " (" + newItemPrice + ") @ $" + newItemQuant));
+       newItemName + " (" + newItemQuant + ") @ $" + newItemPrice));
 
   groceries.push({
     name: newItemName, 
     price: newItemPrice, 
-    quantity: newItemQuant});
+    quantity: newItemQuant,
+    status: newItemStatus
+  });
 
   var newTotal = 0;
 
   $.each(groceries, function( key, value ) {
     newTotal += value.quantity * value.price;
-    $(".totalCost").find("span").text("$" + newTotal);
+    $(".totalCost").find("span").text("$" + newTotal.toFixed(2));
   });
+
+  console.log(groceries);
 
 });
 
@@ -55,8 +80,27 @@ $(".btn-success").click(function(){
 
 $(".btn-remove").click(function(){
 
-$("li:last").remove();
-//need to update array
+  $("li:last").remove();
+
+  if (groceries.length === 1){
+
+        $(".totalCost").find("span").text("NOTHING! It's all free cuz you got nothin");
+      }
+
+  groceries.splice(-1,1);
+
+  var newNewTotal = 0;
+
+    $.each(groceries, function( key, value ) {
+     newNewTotal += value.quantity * value.price;
+      $(".totalCost").find("span").text("$" + newNewTotal.toFixed(2));
+
+
+      
+
+    });
+
+    console.log(groceries.length);
 
   });
 
@@ -73,7 +117,7 @@ $.each(groceries, function( key, value ) {
   total += value.quantity * value.price;
 });
 
-$(".totalCost").find("span").text("$" + total);
+$(".totalCost").find("span").text("$" + total.toFixed(2));
 
 //5. Put a check in to make sure users aren't adding items without a name, price, or quantity.
 
