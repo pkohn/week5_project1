@@ -121,4 +121,20 @@ $(".totalCost").find("span").text("$" + total.toFixed(2));
 
 //5. Put a check in to make sure users aren't adding items without a name, price, or quantity.
 
+// 5. Add the CDN for jQuery UI script to grocery.html
+// You can find the snippet here: https://developers.google.com/speed/libraries/#jquery-ui
+
+// 6. Add a remove button at the bottom below the total. When clicked, it should remove
+// the last item and update the total.
+
+// 7. Make each grocery item (each li element) draggable using .sortable().
+// Use the example here https://johnny.github.io/jquery-sortable/ to figure out how to implement this.
+// The three steps under 'Getting Started' should get you there. You do not NEED the css provided.
+
+// 8. In the HTML document, add a list below "#list" called "purchased". All of the items that are status complete
+// should go in the purchased list.
+
+// 9. When one of the grocery items in "#list" is double-clicked the status for that item
+// should change to "complete" and populate in the complete list.
+
 });
